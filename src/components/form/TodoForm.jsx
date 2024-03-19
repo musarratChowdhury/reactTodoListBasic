@@ -9,27 +9,38 @@ function TodoForm({ setTodoArr }) {
 
   return (
     <form className="TodoForm">
-      <input
-        type="text"
-        name=""
-        id=""
-        defaultValue={todoName}
-        onChange={(e) => {
-          setErrorMsg("");
-          setTodoName(e.target.value);
-        }}
-      />
+      <label className="input input-bordered input-secondary flex items-center gap-2">
+        Name
+        <input
+          type="text"
+          name=""
+          className="grow"
+          id=""
+          defaultValue={todoName}
+          onChange={(e) => {
+            setErrorMsg("");
+            setTodoName(e.target.value);
+          }}
+        />
+      </label>
+
       <span className="danger">{errorMsg}</span>
-      <input
-        type="text"
-        name=""
-        id=""
-        defaultValue={todoDate}
-        onChange={(e) => setTodoDate(e.target.value)}
-      />
+
+      <label className="input input-bordered input-secondary flex items-center gap-2">
+        Date
+        <input
+          type="date"
+          className="grow"
+          name=""
+          id=""
+          defaultValue={todoDate}
+          onChange={(e) => setTodoDate(e.target.value)}
+        />
+      </label>
       <input
         type="button"
         value="Submit"
+        className="btn btn-active btn-primary"
         onClick={() => {
           if (todoName == "") {
             setErrorMsg("Plz enter a name");
