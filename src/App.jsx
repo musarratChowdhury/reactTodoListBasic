@@ -14,6 +14,7 @@ function App() {
       <img src={myimg}></img>
       <TodoForm setTodoArr={setTodoArr} />
       <TodoList todoList={todoArr} />
+      <button className="btn">Hello daisyUI</button>
     </>
   );
 }
